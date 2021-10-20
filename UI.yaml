@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buksappui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: buksappui
+  template:
+    metadata:
+      labels:
+        app: buksappui
+    spec:
+      containers:
+      - name: myapp
+        image: bukunmi00/buksappui
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: buksappui
+spec:
+  type: NodePort
+  selector:
+    app: buksappui
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    nodePort: 31000
