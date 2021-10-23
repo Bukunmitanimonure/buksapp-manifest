@@ -21,7 +21,7 @@ spec:
             memory: "512Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80
+        - containerPort: 4000
 
 
 
@@ -37,6 +37,6 @@ spec:
   selector:
     app: buksappapi
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 4000
+    targetPort: 4000
     protocol: TCP
