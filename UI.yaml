@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: bukunmi00/buksappui
+        image: bukunmi00/buksdeploy
         imagePullPolicy: Always
         resources:
           limits:
