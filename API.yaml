@@ -13,7 +13,7 @@ spec:
         app: buksappapi
     spec:
       containers:
-      - name: myapp
+      - name: buksappapi
         image: bukunmi00/buksdeploy2
         imagePullPolicy: Always
         resources:
